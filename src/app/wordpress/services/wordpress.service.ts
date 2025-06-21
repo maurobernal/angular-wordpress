@@ -13,7 +13,7 @@ export class WordpressService {
   private http = inject(HttpClient);
 
   // Define the WordPress API endpoint URL.
-  private readonly wordpressApiUrl = 'https://maurobernal.com.ar2/wp-json/wp/v2/posts';
+  private readonly wordpressApiUrl = 'https://maurobernal.com.ar/wp-json/wp/v2/posts';
 
   /**
    * Fetches a list of posts from the WordPress REST API.
