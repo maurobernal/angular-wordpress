@@ -131,8 +131,8 @@ describe('PostsComponent', () => {
       component.isLoading.set(true);
       component.error.set(null);
 
-      // Call the method directly to test its behavior with the new spy return value
-      (component as any).loadPosts(); // Use type assertion to access private method if needed for test
+      // Trigger the lifecycle method that calls loadPosts
+      component.ngOnInit(); // Use ngOnInit to test loadPosts indirectly
       fixture.detectChanges(); // Process the async error response
 
       expect(component.isLoading()).toBe(false);
