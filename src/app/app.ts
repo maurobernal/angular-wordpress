@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PostsComponent } from "./wordpress/components/posts.components";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, PostsComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
