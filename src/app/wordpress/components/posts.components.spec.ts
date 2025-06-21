@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { of, throwError } from 'rxjs';
 
 import { PostsComponent } from './posts.components';
@@ -39,10 +40,12 @@ describe('PostsComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         CommonModule, // Import CommonModule as it's used in PostsComponent
-        HttpClientTestingModule, // For mocking HTTP requests if WordpressService wasn't mocked directly
+        // HttpClientTestingModule is removed
         PostsComponent, // Import the standalone component directly
       ],
       providers: [
+        provideHttpClient(), // Provide HttpClient
+        provideHttpClientTesting(), // Provide testing utilities for HttpClient
         WordpressService, // Provide the actual service, we will spy on its methods
       ],
     }).compileComponents();
