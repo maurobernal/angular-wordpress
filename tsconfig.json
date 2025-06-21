@@ -3,6 +3,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+		"baseUrl": "./src",
+			"paths": {
+				"@shared/*": ["app/shared/*"],
+				"@twitch/*": ["app/twitch/*"],
+				"@youtube/*": ["app/youtube/*"],
+				"@wordpress/*": ["app/wordpress/*"],
+			},
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
